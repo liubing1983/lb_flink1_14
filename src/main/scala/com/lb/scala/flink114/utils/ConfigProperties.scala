@@ -5,12 +5,12 @@ import java.util.Properties
 import com.lb.unicron.java.fileutil.ConfigFiles
 
 /**
-  * @ClassName ConfigProperties
-  * @Description @TODO
-  * @Author liubing
-  * @Date 2021/11/22 09:06
-  * @Version 1.0
-  **/
+ * @ClassName ConfigProperties
+ * @Description @TODO
+ * @Author liubing
+ * @Date 2021/11/22 09:06
+ * @Version 1.0
+ * */
 object ConfigProperties {
 
   val conf: ConfigFiles = new ConfigFiles()
@@ -33,8 +33,8 @@ object ConfigProperties {
     properties
   }
 
-  def getMysqlProperties() : Properties = {
-null
+  def getMysqlProperties(): Properties = {
+    null
   }
 
 

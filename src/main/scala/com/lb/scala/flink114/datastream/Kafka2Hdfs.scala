@@ -56,7 +56,8 @@ object Kafka2Hdfs {
     // forRowFormat   按行写入
     val sink: StreamingFileSink[UserParquetToStringSchema] = StreamingFileSink
       .forBulkFormat(new Path("hdfs://cdh1:8020/user/liubing/flink/kafka2hdfs"),
-        ParquetAvroWriters.forReflectRecord(classOf[UserParquetToStringSchema]).asInstanceOf[BulkWriter.Factory[UserParquetToStringSchema]])
+        ParquetAvroWriters.forReflectRecord(classOf[UserParquetToStringSchema])
+          .asInstanceOf[BulkWriter.Factory[UserParquetToStringSchema]])
 
       //.withBucketAssigner(new DateTimeBucketAssigner[UserParquetSchema]("yyyy-MM-dd-HH-mm")) // flink 默认
       .withBucketAssigner(new DateTimeBucketAssigner[UserParquetToStringSchema]("yyyyMMddHH"))

@@ -1,0 +1,10 @@
+
+{"namespace": "com.lb.scala.avro",
+ "type": "record",
+ "name": "User",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "age",  "type": ["int", "null"]},
+     {"name": "idno", "type": ["string", "null"]}
+ ]
+}

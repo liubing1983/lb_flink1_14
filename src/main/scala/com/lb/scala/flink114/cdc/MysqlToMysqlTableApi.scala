@@ -2,24 +2,22 @@ package com.lb.scala.flink114.cdc
 
 
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
-import org.apache.flink.table.api.bridge.scala.StreamTableEnvironment
 import org.apache.flink.types.Row
 import org.apache.flink.api.scala._
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.table.api.{EnvironmentSettings, TableEnvironment}
 
 object MysqlToMysqlTableApi extends App {
 
 
   // 环境配置
-  val settings = EnvironmentSettings
-    .newInstance()
-    .inStreamingMode()
-    .build()
+//  val settings = EnvironmentSettings
+//    .newInstance()
+//    .inStreamingMode()
+//    .build()
 
   val env = StreamExecutionEnvironment.getExecutionEnvironment
 
-  val tableEnv: StreamTableEnvironment = StreamTableEnvironment.create(env, settings)
+  //val tableEnv: StreamTableEnvironment = StreamTableEnvironment.create(env, settings)
 
   //val c = conf.getProperties("cdc/MysqlToMysqlTableApi.properties")
 

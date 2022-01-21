@@ -16,4 +16,49 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-api-scala-bridge_${scala.binary.version}</artifactId>
+            <version>${flink114.version}</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-runtime-blink_${scala.binary.version}</artifactId>
+            <version>1.13.3</version>
+        </dependency>  -->
+
+        <!-- 实现自定义格式或连接器 用于（反）序列化行或一组用户定义的函数，下面的依赖就足够了，编译出来的 jar 文件可以直接给 SQL Client 使用 -->
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table</artifactId>
+            <version>1.14.2</version>
+            <type>pom</type>
+            <!--<scope>provided</scope> -->
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-common</artifactId>
+            <version>${flink114.version}</version>
+        </dependency>
+
+        <!--  如果你想在 IDE 本地运行你的程序，你需要添加下面的模块，具体用哪个取决于你使用哪个 Planner -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-planner_${scala.binary.version}</artifactId>
+            <version>${flink114.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-scala_2.11</artifactId>
+            <version>${flink114.version}</version>
+            <!--<scope>provided</scope> -->
+        </dependency>
+    </dependencies>
+
 </project>
